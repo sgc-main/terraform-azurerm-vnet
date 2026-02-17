@@ -10,7 +10,7 @@ locals {
       is_gateway       = lower(subnet_key) == "gatewaysubnet"
       is_public        = lower(subnet_key) != "gatewaysubnet" && can(regex("pub|appgw|gateway", lower(subnet_key)))
       is_aks           = can(regex("aks|node|k8s|pod", lower(subnet_key)))
-      is_app_gateway   = lower(subnet_key) != "gatewaysubnet" && can(regex("appgw|gateway", lower(subnet_key)))
+      is_app_gateway   = lower(subnet_key) != "gatewaysubnet" && can(regex("appgw|gateway|agc", lower(subnet_key)))
     }
   }
 
